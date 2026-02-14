@@ -1193,6 +1193,8 @@
     });
 
     function unlockVideo() {
+        // BGM 정지
+        if(playing){ audio.pause(); playing=false; document.getElementById('bgmPlayBtn').innerHTML='<span class="material-symbols-outlined text-lg">play_arrow</span>'; }
         var locked=document.getElementById('videoLocked'), unlocked=document.getElementById('videoUnlocked');
         if(locked) locked.classList.add('hidden');
         if(unlocked) { unlocked.classList.remove('hidden'); unlocked.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/BflL5wC4T-c?rel=0" title="바이브코딩 0211 공개특강" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border-radius:16px;"></iframe>'; }
@@ -1225,6 +1227,10 @@
     window.nextTrack=function(){ ci=(ci+1)%tracks.length; document.getElementById('bgmTitle').textContent=tracks[ci].t; if(playing){ audio.src=tracks[ci].s; audio.play().catch(function(){}); } };
     window.setVolume=function(v){ audio.volume=v/100; };
     audio.addEventListener('ended',function(){ window.nextTrack(); if(playing) audio.play().catch(function(){}); });
+    // 페이지 로드 시 BGM 자동재생
+    var pauseIcon='<span class="material-symbols-outlined text-lg">pause</span>';
+    audio.src=tracks[ci].s; document.getElementById('bgmTitle').textContent=tracks[ci].t;
+    audio.play().then(function(){ playing=true; document.getElementById('bgmPlayBtn').innerHTML=pauseIcon; }).catch(function(){ document.addEventListener('click',function autoPlay(){ if(!playing){ audio.play().then(function(){ playing=true; document.getElementById('bgmPlayBtn').innerHTML=pauseIcon; }).catch(function(){}); } document.removeEventListener('click',autoPlay); },{once:true}); });
 })();
 </script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
