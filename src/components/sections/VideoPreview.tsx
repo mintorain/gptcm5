@@ -29,7 +29,7 @@ const videos = [
 
 export default function VideoPreview() {
     return (
-        <section id="video" className="py-24 bg-[#0A0A0A]">
+        <section id="video" className="py-32 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-14">
@@ -71,7 +71,7 @@ export default function VideoPreview() {
                                         {video.duration}
                                     </span>
                                 </div>
-                                <div className="p-5">
+                                <div className="p-5 text-center">
                                     <h3 className="text-white font-semibold text-sm mb-1">{video.title}</h3>
                                     <p className="text-gray-500 text-xs">{video.description}</p>
                                 </div>

@@ -9,7 +9,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-24 bg-[#0A0A0A]">
+        <section className="py-32 bg-[#0A0A0A]">
             <div className="max-w-3xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-14">
@@ -27,15 +27,15 @@ export default function FAQ() {
                             >
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors"
+                                    className="w-full flex items-center justify-between p-5 hover:bg-white/[0.02] transition-colors"
                                 >
-                                    <span className="text-white font-medium pr-4">{item.question}</span>
+                                    <span className="text-white font-medium pr-4 text-left">{item.question}</span>
                                     <ChevronDown
                                         className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
                                     />
                                 </button>
                                 {openIndex === index && (
-                                    <div className="px-5 pb-5">
+                                    <div className="px-5 pb-5 text-center">
                                         <p className="text-gray-400 text-sm leading-relaxed">{item.answer}</p>
                                     </div>
                                 )}

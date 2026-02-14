@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 
 export default function Instructor() {
     return (
-        <section id="instructor" className="py-24 bg-[#0A0A0A]">
+        <section id="instructor" className="py-32 bg-[#0A0A0A]">
             <div className="max-w-4xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-12">

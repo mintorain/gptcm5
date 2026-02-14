@@ -5,7 +5,7 @@ import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section"
 
 export default function Transformation() {
     return (
-        <section className="py-24 bg-[#0A0A0A]">
+        <section className="py-32 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">

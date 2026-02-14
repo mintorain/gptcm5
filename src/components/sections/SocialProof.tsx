@@ -48,7 +48,7 @@ function CountUp({ end, suffix, duration = 2000 }: { end: number; suffix: string
 
 export default function SocialProof() {
     return (
-        <section id="social-proof" className="py-24 bg-[#0A0A0A]">
+        <section id="social-proof" className="py-32 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">

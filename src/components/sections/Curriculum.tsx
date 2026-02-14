@@ -9,7 +9,7 @@ export default function Curriculum() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="curriculum" className="py-24 bg-[#0A0A0A]">
+        <section id="curriculum" className="py-32 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">
@@ -28,9 +28,9 @@ export default function Curriculum() {
                             >
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors"
+                                    className="w-full flex items-center justify-between p-5 hover:bg-white/[0.02] transition-colors"
                                 >
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex items-center gap-4 text-left">
                                         <span className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-sm shrink-0">
                                             {item.session}
                                         </span>
@@ -41,9 +41,9 @@ export default function Curriculum() {
                                     />
                                 </button>
                                 {openIndex === index && (
-                                    <div className="px-5 pb-5 pt-0">
-                                        <p className="text-gray-400 mb-3 pl-14">{item.description}</p>
-                                        <div className="flex flex-wrap gap-2 pl-14">
+                                    <div className="px-5 pb-5 pt-0 text-center">
+                                        <p className="text-gray-400 mb-3">{item.description}</p>
+                                        <div className="flex flex-wrap justify-center gap-2">
                                             {item.keywords.map((kw) => (
                                                 <span
                                                     key={kw}

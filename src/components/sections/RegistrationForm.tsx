@@ -56,7 +56,7 @@ export default function RegistrationForm() {
     };
 
     return (
-        <section id="apply" className="py-24 bg-[#0A0A0A]">
+        <section id="apply" className="py-32 bg-[#0A0A0A]">
             <div className="max-w-2xl mx-auto px-4">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-5">수강 신청 & 후기</h2>
@@ -83,7 +83,7 @@ export default function RegistrationForm() {
                     <form onSubmit={handleSubmit} className="space-y-5 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
                         {/* 폼 유형 */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-3">유형 선택</label>
+                            <label className="block text-sm font-medium text-gray-300 mb-3 text-center">유형 선택</label>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                 {[
                                     { value: "register", label: "수강 신청" },
@@ -108,12 +108,12 @@ export default function RegistrationForm() {
                         {/* 수강 과정 */}
                         {(formData.formType === "register" || formData.formType === "both") && (
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-3">수강 과정</label>
+                                <label className="block text-sm font-medium text-gray-300 mb-3 text-center">수강 과정</label>
                                 <div className="grid grid-cols-2 gap-2">
                                     <button
                                         type="button"
                                         onClick={() => setFormData({ ...formData, courseType: "online" })}
-                                        className={`p-4 rounded-xl text-left border transition-all ${formData.courseType === "online"
+                                        className={`p-4 rounded-xl text-center border transition-all ${formData.courseType === "online"
                                             ? "bg-purple-600/20 border-purple-500 text-white"
                                             : "bg-white/5 border-white/10 text-gray-400 hover:border-purple-500/30"
                                             }`}
@@ -124,7 +124,7 @@ export default function RegistrationForm() {
                                     <button
                                         type="button"
                                         onClick={() => setFormData({ ...formData, courseType: "offline" })}
-                                        className={`p-4 rounded-xl text-left border transition-all ${formData.courseType === "offline"
+                                        className={`p-4 rounded-xl text-center border transition-all ${formData.courseType === "offline"
                                             ? "bg-purple-600/20 border-purple-500 text-white"
                                             : "bg-white/5 border-white/10 text-gray-400 hover:border-purple-500/30"
                                             }`}
