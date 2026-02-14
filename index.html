@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GPT 콘텐츠 메이커 5기 — 공개특강 후기 선물 & 수강 신청</title>
+    <meta name="description" content="GPT 콘텐츠 메이커 5기 수강 신청 & 공개특강 후기 선물 페이지. 바이브코딩으로 나만의 웹서비스를 만드세요. 후기 작성 시 AI 도구 10종 선물!">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="GPT 콘텐츠 메이커 5기 — 수강 신청 & 후기 선물">
+    <meta property="og:description" content="바이브코딩으로 나만의 웹서비스를 만드세요. 125명 수료생이 검증한 과정, 후기 작성 시 AI 도구 10종 선물!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://img.youtube.com/vi/BflL5wC4T-c/maxresdefault.jpg">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ffff",
+                        "accent": "#ff00ff",
+                        "secondary": "#bf00ff",
+                        "pink": "#ff0080",
+                        "navy": "#0a0a1a",
+                        "gold": "#ffd700",
+                    },
+                    fontFamily: {
+                        "sans": ["Noto Sans KR", "sans-serif"],
+                        "cyber": ["Orbitron", "Noto Sans KR", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* === Dark Mode (Default) === */
+        :root {
+            --neon-cyan: #00ffff;
+            --neon-magenta: #ff00ff;
+            --neon-purple: #bf00ff;
+            --neon-pink: #ff0080;
+            --dark-bg: #0a0a1a;
+            --darker-bg: #050510;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: rgba(0, 255, 255, 0.2);
+            --header-bg: rgba(10, 10, 26, 0.7);
+            --footer-bg: #050510;
+            --glass-bg: rgba(20, 20, 40, 0.6);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --gold: #ffd700;
+            --danger: #f97373;
+        }
+
+        /* === Light Mode === */
+        html.light {
+            --dark-bg: #f8fafc;
+            --darker-bg: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --border-color: rgba(14, 165, 233, 0.25);
+            --header-bg: rgba(248, 250, 252, 0.95);
+            --footer-bg: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --input-bg: rgba(15, 23, 42, 0.05);
+            --neon-cyan: #0891b2;
+            --neon-magenta: #c026d3;
+            --neon-purple: #7c3aed;
+            --neon-pink: #db2777;
+            --gold: #b8860b;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* === Glassmorphism === */
+        .glass {
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass:hover {
+            border-color: rgba(0, 255, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        .glass-static {
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        .glass-primary {
+            background: rgba(0, 20, 30, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.15);
+        }
+        .glass-accent {
+            background: rgba(30, 10, 30, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 0, 255, 0.15);
+        }
+
+        /* Neon Box */
+        .neon-box { border: 1px solid var(--neon-cyan); box-shadow: 0 0 15px rgba(0,255,255,0.3), inset 0 0 15px rgba(0,255,255,0.05); }
+        .neon-box-purple { border: 1px solid var(--neon-purple); box-shadow: 0 0 15px rgba(191,0,255,0.3), inset 0 0 15px rgba(191,0,255,0.05); }
+
+        /* === Buttons === */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+            position: relative; overflow: hidden; transition: all 0.3s ease;
+        }
+        .btn-primary:hover { box-shadow: 0 8px 30px rgba(0,255,255,0.6); transform: translateY(-2px); }
+        .btn-primary::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 2s infinite;
+        }
+        .btn-secondary {
+            background: transparent; border: 2px solid var(--neon-cyan); color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0,255,255,0.2); transition: all 0.3s ease;
+        }
+        .btn-secondary:hover { background: rgba(0,255,255,0.1); box-shadow: 0 0 25px rgba(0,255,255,0.4); }
+
+        /* === Text Effects === */
+        .holo-text {
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-magenta) 50%, var(--neon-cyan) 100%);
+            background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; animation: holo-shift 3s ease infinite;
+        }
+        .text-neon-cyan { color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0,255,255,0.5); }
+        .text-neon-magenta { color: var(--neon-magenta); text-shadow: 0 0 20px rgba(255,0,255,0.5); }
+        .text-neon-purple { color: var(--neon-purple); text-shadow: 0 0 20px rgba(191,0,255,0.5); }
+        .text-neon-pink { color: var(--neon-pink); text-shadow: 0 0 20px rgba(255,0,128,0.5); }
+        .text-gold { color: var(--gold); text-shadow: 0 0 15px rgba(255,215,0,0.4); }
+        .counter-animated { font-variant-numeric: tabular-nums; }
+
+        /* === Animations === */
+        @keyframes shine { 0% { left: -100%; } 50%, 100% { left: 100%; } }
+        @keyframes holo-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @keyframes pulse-neon { 0%, 100% { box-shadow: 0 0 20px rgba(0,255,255,0.3); } 50% { box-shadow: 0 0 40px rgba(0,255,255,0.6); } }
+        .pulse-neon { animation: pulse-neon 2s ease-in-out infinite; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { opacity: 0; animation: fadeInUp 0.6s ease forwards; }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+        /* === Progress Bar === */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink)); z-index: 9999; transition: width 0.3s ease; }
+
+        /* === Scrollbar === */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--darker-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-magenta); }
+
+        /* === Volume Slider === */
+        #volumeSlider { -webkit-appearance: none; height: 6px; border-radius: 3px; background: linear-gradient(to right, var(--neon-cyan) 0%, var(--neon-cyan) 50%, rgba(255,255,255,0.2) 50%); }
+        #volumeSlider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--neon-cyan); cursor: pointer; box-shadow: 0 0 10px var(--neon-cyan); }
+
+        /* === Modal === */
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(10,10,26,0.85); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 16px; }
+        .modal { width: 100%; max-width: 440px; background: var(--dark-bg); border-radius: 20px; border: 1px solid rgba(0,255,255,0.3); box-shadow: 0 30px 80px rgba(0,0,0,0.6); padding: 24px; animation: scaleIn 0.2s ease; }
+
+        /* === FAQ Accordion === */
+        .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 200px; padding-top: 12px; }
+        .faq-item .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+
+        /* === Confetti === */
+        #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9998; }
+
+        /* === Light Mode Overrides === */
+        html.light .text-white { color: #0f172a !important; }
+        html.light .text-gray-200, html.light .text-gray-300 { color: #334155 !important; }
+        html.light .text-gray-400 { color: #64748b !important; }
+        html.light h1, html.light h2, html.light h3, html.light h4 { color: #0f172a; }
+        html.light p { color: #334155; }
+
+        html.light .glass, html.light .glass-static { background: rgba(255,255,255,0.9); border: 1px solid rgba(14,165,233,0.15); box-shadow: 0 4px 20px rgba(15,23,42,0.08); }
+        html.light .glass:hover { border-color: rgba(14,165,233,0.4); box-shadow: 0 8px 30px rgba(15,23,42,0.12); }
+        html.light .glass-primary { background: linear-gradient(135deg, rgba(14,165,233,0.08), rgba(124,58,237,0.05)); border: 1px solid rgba(14,165,233,0.2); }
+        html.light .glass-accent { background: linear-gradient(135deg, rgba(192,38,211,0.08), rgba(219,39,119,0.05)); border: 1px solid rgba(192,38,211,0.2); }
+        html.light .neon-box { border: 2px solid var(--neon-cyan); box-shadow: 0 4px 15px rgba(8,145,178,0.15); }
+        html.light .neon-box-purple { border: 2px solid var(--neon-purple); box-shadow: 0 4px 15px rgba(124,58,237,0.15); }
+        html.light .btn-primary { background: linear-gradient(135deg, #0891b2, #7c3aed); color: #fff !important; box-shadow: 0 4px 20px rgba(8,145,178,0.35); }
+        html.light .btn-secondary { border-color: var(--neon-cyan); color: var(--neon-cyan); background: rgba(8,145,178,0.05); }
+        html.light .holo-text { background: linear-gradient(135deg, #0891b2, #c026d3 50%, #7c3aed); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        html.light .text-neon-cyan { color: #0891b2; text-shadow: 0 0 20px rgba(8,145,178,0.3); }
+        html.light .text-neon-magenta { color: #c026d3; text-shadow: none; }
+        html.light .text-neon-purple { color: #7c3aed; text-shadow: none; }
+        html.light .text-neon-pink { color: #db2777; text-shadow: none; }
+        html.light .text-gold { color: #b8860b; text-shadow: none; }
+        html.light .modal { background: #fff; border: 1px solid rgba(14,165,233,0.3); }
+        html.light input, html.light textarea { background: var(--input-bg); color: var(--text-primary); }
+        html.light .progress-bar { background: linear-gradient(90deg, #0891b2, #7c3aed, #db2777); }
+        html.light ::-webkit-scrollbar-track { background: #f1f5f9; }
+        html.light ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #0891b2, #7c3aed); }
+
+        /* Footer always dark */
+        .footer-dark .text-white, .footer-dark h3, .footer-dark h4 { color: #fff !important; }
+        .footer-dark .text-gray-400 { color: #a0a0a0 !important; }
+        .footer-dark .holo-text { -webkit-text-fill-color: transparent !important; }
+
+        /* Theme Toggle */
+        .theme-toggle { padding: 0.5rem; border-radius: 9999px; transition: all 0.3s; }
+        .theme-toggle:hover { background: rgba(0,255,255,0.15); transform: scale(1.1); }
+        html.light .theme-toggle { color: #0891b2; }
+
+        /* === Responsive === */
+        @media (max-width: 767px) {
+            body { font-size: 16px; }
+            .glass, .glass-static { padding: 1.25rem; }
+            .btn-primary, .btn-secondary { padding: 0.875rem 1.5rem; font-size: 1rem; }
+            .fixed.bottom-0 { padding-bottom: env(safe-area-inset-bottom, 0.75rem); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<canvas id="confettiCanvas"></canvas>
+<div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg" style="background: var(--header-bg); border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+            <img src="mirae_logo1.png" alt="미래이음연구소" class="h-8 w-auto" onerror="this.style.display='none'">
+            <span class="font-cyber text-sm tracking-wider text-neon-cyan hidden sm:inline">GPT 콘텐츠 메이커 5기</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm" style="color: var(--text-muted);">
+            <a href="#achievements" class="hover:text-white transition-colors">성과</a>
+            <a href="#gallery" class="hover:text-white transition-colors">사례</a>
+            <a href="#special-lecture" class="hover:text-white transition-colors">공개특강</a>
+            <a href="#review-guide" class="hover:text-white transition-colors">후기</a>
+            <a href="#gifts" class="hover:text-white transition-colors">선물</a>
+            <a href="#enroll" class="hover:text-white transition-colors">수강신청</a>
+            <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-2">
+            <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
+                <span class="material-symbols-outlined text-xl" id="themeIcon">dark_mode</span>
+            </button>
+            <button id="mobileMenuBtn" class="md:hidden theme-toggle" aria-label="메뉴">
+                <span class="material-symbols-outlined text-xl">menu</span>
+            </button>
+        </div>
+    </div>
+    <!-- Countdown Bar -->
+    <div class="w-full py-1.5 text-center text-xs font-medium" style="background: linear-gradient(90deg, rgba(0,255,255,0.1), rgba(191,0,255,0.1));">
+        <span class="text-neon-cyan font-cyber" id="countdownText">5기 수강 신청 마감까지 로딩 중...</span>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-3" style="background: var(--header-bg);">
+        <nav class="flex flex-col gap-2 text-sm" style="color: var(--text-muted);">
+            <a href="#achievements" class="py-2 border-b" style="border-color: var(--border-color);">성과</a>
+            <a href="#gallery" class="py-2 border-b" style="border-color: var(--border-color);">사례</a>
+            <a href="#special-lecture" class="py-2 border-b" style="border-color: var(--border-color);">공개특강</a>
+            <a href="#review-guide" class="py-2 border-b" style="border-color: var(--border-color);">후기</a>
+            <a href="#gifts" class="py-2 border-b" style="border-color: var(--border-color);">선물</a>
+            <a href="#enroll" class="py-2 border-b" style="border-color: var(--border-color);">수강신청</a>
+            <a href="#faq" class="py-2">FAQ</a>
+        </nav>
+    </div>
+</header>
+
+<div class="h-24"></div>
+
+<!-- ===== ① HERO ===== -->
+<section id="hero" class="relative min-h-[80vh] flex items-center justify-center py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at top, rgba(147,51,234,0.15), transparent 60%), radial-gradient(ellipse at bottom right, rgba(255,215,0,0.08), transparent 50%);"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6 fade-in-up" style="background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3);">
+            <span class="text-gold">GPT 콘텐츠 메이커 5기</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 holo-text fade-in-up" style="animation-delay: 0.3s;">
+            공개특강에 참석해주셔서<br>감사합니다!
+        </h1>
+        <p class="text-lg md:text-xl mb-8 fade-in-up" style="color: var(--text-secondary); animation-delay: 0.6s;">
+            바이브코딩으로 나만의 웹서비스를 만드는<br class="sm:hidden">
+            <strong class="text-neon-cyan">GPT 콘텐츠 메이커 5기</strong>가 시작됩니다
+        </p>
+        <div class="glass-static inline-flex items-center gap-3 px-6 py-3 rounded-2xl mb-8 fade-in-up" style="animation-delay: 0.8s;">
+            <span class="material-symbols-outlined text-gold">timer</span>
+            <span class="font-cyber text-sm md:text-base text-gold" id="heroCountdown">마감까지 계산 중...</span>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 1s;">
+            <a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" rel="noopener noreferrer"
+               class="btn-primary px-8 py-4 rounded-xl text-lg font-bold text-black w-full sm:w-auto text-center pulse-neon" id="heroCTA">
+                5기 수강 신청하기
+            </a>
+            <a href="#special-lecture"
+               class="btn-secondary px-8 py-4 rounded-xl text-lg font-bold w-full sm:w-auto text-center">
+                공개특강 다시보기
+            </a>
+        </div>
+        <p class="mt-6 text-sm fade-in-up" style="color: var(--text-muted); animation-delay: 1.2s;">
+            1~4기 누적 <strong class="text-neon-cyan">125명</strong> 수료 · 5기째 운영 중인 검증된 과정
+        </p>
+    </div>
+</section>
+
+<!-- ===== ② 과정 성과 ===== -->
+<section id="achievements" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">125명이 경험한 바이브코딩의 성과</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">1~4기 수료생들과 함께 만들어 온 여정입니다</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="glass-static rounded-2xl p-6 text-center">
+                <span class="material-symbols-outlined text-4xl text-neon-cyan mb-3">groups</span>
+                <div class="font-cyber text-3xl md:text-4xl font-bold text-neon-cyan counter-animated" data-target="125">0</div>
+                <div class="text-sm mt-1" style="color: var(--text-muted);">명+</div>
+                <div class="text-base font-medium mt-2" style="color: var(--text-secondary);">누적 수료 인원</div>
+            </div>
+            <div class="glass-static rounded-2xl p-6 text-center">
+                <span class="material-symbols-outlined text-4xl text-neon-magenta mb-3">school</span>
+                <div class="font-cyber text-3xl md:text-4xl font-bold text-neon-magenta counter-animated" data-target="5">0</div>
+                <div class="text-sm mt-1" style="color: var(--text-muted);">기</div>
+                <div class="text-base font-medium mt-2" style="color: var(--text-secondary);">운영 기수</div>
+            </div>
+            <div class="glass-static rounded-2xl p-6 text-center">
+                <span class="material-symbols-outlined text-4xl text-neon-purple mb-3">schedule</span>
+                <div class="font-cyber text-3xl md:text-4xl font-bold text-neon-purple counter-animated" data-target="10">0</div>
+                <div class="text-sm mt-1" style="color: var(--text-muted);">시간+</div>
+                <div class="text-base font-medium mt-2" style="color: var(--text-secondary);">집중 학습 시간</div>
+            </div>
+            <div class="glass-static rounded-2xl p-6 text-center">
+                <span class="material-symbols-outlined text-4xl text-neon-pink mb-3">code</span>
+                <div class="font-cyber text-3xl md:text-4xl font-bold text-neon-pink counter-animated" data-target="100">0</div>
+                <div class="text-sm mt-1" style="color: var(--text-muted);">%</div>
+                <div class="text-base font-medium mt-2" style="color: var(--text-secondary);">바이브코딩 경험</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ③ 개발 사례 갤러리 ===== -->
+<section id="gallery" class="py-20 px-4" style="background: linear-gradient(180deg, transparent, rgba(0,255,255,0.02), transparent);">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">바이브코딩으로 탄생한 웹서비스들</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">"나도 이런 것을 만들 수 있다" — 수료생들의 실제 프로젝트</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <a href="https://duon.myds.me/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-6 block">
+                <span class="material-symbols-outlined text-3xl text-neon-cyan mb-3">language</span>
+                <h3 class="text-lg font-bold text-neon-cyan mb-2">두온교육 출판사</h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-muted);">양질의 교육 콘텐츠를 제공하는 출판사 홈페이지. React(Vite) 기반 SPA.</p>
+                <span class="inline-flex items-center gap-1 text-neon-cyan text-sm font-bold">사이트 방문 <span class="material-symbols-outlined text-sm">open_in_new</span></span>
+            </a>
+            <a href="https://duon.myds.me/mintobot" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-6 block">
+                <span class="material-symbols-outlined text-3xl text-neon-magenta mb-3">smart_toy</span>
+                <h3 class="text-lg font-bold text-neon-magenta mb-2">민토봇 — AI 출판 챗봇</h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-muted);">소설·에세이 창작부터 PDF 출판까지 77개 AI 도구 내장. 다국어 지원.</p>
+                <span class="inline-flex items-center gap-1 text-neon-magenta text-sm font-bold">사이트 방문 <span class="material-symbols-outlined text-sm">open_in_new</span></span>
+            </a>
+            <a href="https://maintorain.duonedu.net" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-6 block">
+                <span class="material-symbols-outlined text-3xl text-neon-purple mb-3">business</span>
+                <h3 class="text-lg font-bold text-neon-purple mb-2">미래이음연구소</h3>
+                <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-muted);">강사 소개 및 교육 사업 안내 페이지. 전문적 브랜딩 사이트.</p>
+                <span class="inline-flex items-center gap-1 text-neon-purple text-sm font-bold">사이트 방문 <span class="material-symbols-outlined text-sm">open_in_new</span></span>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="https://duon.myds.me/youtube" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                <span class="material-symbols-outlined text-2xl text-neon-pink mb-2">movie</span>
+                <h3 class="text-base font-bold text-neon-pink mb-1">Muse AI</h3>
+                <p class="text-xs line-clamp-2" style="color: var(--text-muted);">AI 시나리오·영상 제작. 18개+ 도구.</p>
+            </a>
+            <a href="https://duon.myds.me/novel2" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                <span class="material-symbols-outlined text-2xl text-gold mb-2">auto_stories</span>
+                <h3 class="text-base font-bold text-gold mb-1">AI 웹소설 작성기</h3>
+                <p class="text-xs line-clamp-2" style="color: var(--text-muted);">세계관→캐릭터→본문→EPUB 원스톱.</p>
+            </a>
+            <a href="https://bomb-finder.vercel.app/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                <span class="material-symbols-outlined text-2xl text-neon-cyan mb-2">sports_esports</span>
+                <h3 class="text-base font-bold text-neon-cyan mb-1">미니게임 월드</h3>
+                <p class="text-xs line-clamp-2" style="color: var(--text-muted);">6가지 캐주얼 게임 포털.</p>
+            </a>
+            <a href="https://duon.myds.me/study_site/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                <span class="material-symbols-outlined text-2xl text-neon-magenta mb-2">build</span>
+                <h3 class="text-base font-bold text-neon-magenta mb-1">AI 도구 모음</h3>
+                <p class="text-xs line-clamp-2" style="color: var(--text-muted);">분야별 AI 서비스 검색·비교.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ④ 공개특강 다시보기 ===== -->
+<section id="special-lecture" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">공개특강 다시보기</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">이름·연락처·이메일을 남기시면 다시보기 영상을 바로 시청하실 수 있습니다</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-4" style="background: rgba(0,255,255,0.1); border: 1px solid rgba(0,255,255,0.3);">
+                    <span class="material-symbols-outlined text-sm text-neon-cyan">play_circle</span>
+                    <span class="text-neon-cyan">무료 특별 강의</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mb-4" style="color: var(--text-primary);">바이브코딩으로 다목적 타이머 만들기, 웹소설 쓰기</h3>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-cyan mt-0.5">check_circle</span><span style="color: var(--text-secondary);">GPT로 실시간 코딩하는 바이브코딩 체험</span></li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-cyan mt-0.5">check_circle</span><span style="color: var(--text-secondary);">코딩 없이 웹서비스를 만드는 실전 과정</span></li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-neon-cyan mt-0.5">check_circle</span><span style="color: var(--text-secondary);">5기 과정에서 배울 내용 미리보기</span></li>
+                </ul>
+                <button id="openSpecialLectureBtn" class="btn-primary px-6 py-3 rounded-xl font-bold text-black pulse-neon w-full sm:w-auto">
+                    공개특강 다시보기 신청하기
+                </button>
+                <p class="text-xs mt-3" style="color: var(--text-muted);">* 신청 시 과정 안내 및 이벤트 소식도 함께 보내드립니다</p>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden" style="aspect-ratio: 16/9; border: 1px solid rgba(0,255,255,0.2);">
+                <div id="videoLocked" class="absolute inset-0 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, rgba(10,10,26,0.9), rgba(30,10,40,0.9));">
+                    <img src="https://img.youtube.com/vi/BflL5wC4T-c/maxresdefault.jpg" alt="공개특강 썸네일" class="absolute inset-0 w-full h-full object-cover opacity-40">
+                    <div class="relative z-10 text-center">
+                        <span class="material-symbols-outlined text-5xl text-neon-cyan mb-2">lock</span>
+                        <p class="text-sm font-medium" style="color: var(--text-secondary);">신청 후 시청 가능합니다</p>
+                    </div>
+                </div>
+                <div id="videoUnlocked" class="absolute inset-0 hidden"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ⑤ 후기 작성 안내 ===== -->
+<section id="review-guide" class="py-20 px-4" style="background: linear-gradient(180deg, transparent, rgba(191,0,255,0.02), transparent);">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">공개특강 후기를 남겨주세요</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">간단한 3단계로 AI 도구 10종 선물을 받으실 수 있습니다</p>
+        <div class="relative">
+            <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-px" style="background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple), var(--neon-pink));"></div>
+            <div class="relative flex items-start gap-6 mb-12">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-cyber font-bold text-black z-10" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">1</div>
+                <div class="glass-static rounded-2xl p-6 flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="material-symbols-outlined text-2xl text-neon-cyan">edit_note</span>
+                        <h3 class="text-lg font-bold" style="color: var(--text-primary);">후기 작성</h3>
+                        <span class="text-xs px-2 py-0.5 rounded-full" style="background: rgba(0,255,255,0.1); color: var(--neon-cyan);">5~10분</span>
+                    </div>
+                    <p style="color: var(--text-secondary);">미래이음연구소 홈페이지에서 솔직한 공개특강 후기를 작성해주세요</p>
+                    <a href="https://lab.duonedu.net/lectures" target="_blank" rel="noopener noreferrer" class="btn-secondary px-4 py-2 rounded-lg text-sm inline-flex items-center gap-1 mt-4">
+                        미래이음연구소에서 후기 작성하기 <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex items-start gap-6 mb-12">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-cyber font-bold text-black z-10" style="background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));">2</div>
+                <div class="glass-static rounded-2xl p-6 flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="material-symbols-outlined text-2xl text-neon-purple">link</span>
+                        <h3 class="text-lg font-bold" style="color: var(--text-primary);">선물 신청</h3>
+                        <span class="text-xs px-2 py-0.5 rounded-full" style="background: rgba(191,0,255,0.1); color: var(--neon-purple);">30초</span>
+                    </div>
+                    <p style="color: var(--text-secondary);">아래 선물 섹션에서 성함·연락처·이메일을 남겨주세요</p>
+                </div>
+            </div>
+            <div class="relative flex items-start gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-cyber font-bold text-black z-10" style="background: linear-gradient(135deg, var(--neon-pink), var(--gold));">3</div>
+                <div class="glass-static rounded-2xl p-6 flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="material-symbols-outlined text-2xl text-neon-pink">redeem</span>
+                        <h3 class="text-lg font-bold" style="color: var(--text-primary);">선물 수령!</h3>
+                        <span class="text-xs px-2 py-0.5 rounded-full" style="background: rgba(255,0,128,0.1); color: var(--neon-pink);">즉시</span>
+                    </div>
+                    <p style="color: var(--text-secondary);">확인 후 AI 도구 선물 링크가 바로 열립니다</p>
+                </div>
+            </div>
+        </div>
+        <div class="glass-primary rounded-2xl p-6 mt-12 text-center">
+            <p class="font-medium mb-2" style="color: var(--text-primary);">후기 작성 TIP</p>
+            <p class="text-sm" style="color: var(--text-secondary);">
+                추천 키워드: <span class="text-neon-cyan">GPT콘텐츠메이커</span>, <span class="text-neon-cyan">바이브코딩</span>, <span class="text-neon-cyan">두온교육</span>, <span class="text-neon-cyan">AI활용교육</span><br>
+                #GPT콘텐츠메이커 #바이브코딩 #AI교육 #두온교육
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ⑥ 선물 안내 ===== -->
+<section id="gifts" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">감사의 마음을 담아 준비했습니다</h2>
+        <p class="text-center mb-4" style="color: var(--text-muted);">후기 작성 + 신청 폼 제출 시 전원 증정</p>
+        <div class="glass-accent rounded-2xl p-4 text-center mb-8 relative overflow-hidden">
+            <p class="font-bold text-lg relative z-10" style="color: var(--text-primary);">모든 후기 작성자에게 <span class="text-neon-magenta">AI 도구 10종</span>을 선물로 드립니다</p>
+            <p class="text-sm relative z-10 mt-1" style="color: var(--text-muted);">이벤트 기간: 2026년 2월 19일 자정까지</p>
+        </div>
+        <div id="giftLocked" class="glass-static rounded-2xl p-8 text-center mb-8">
+            <span class="material-symbols-outlined text-5xl text-gold mb-3">lock</span>
+            <p class="font-medium mb-2" style="color: var(--text-primary);">선물 링크는 신청 후 열립니다</p>
+            <p class="text-sm mb-6" style="color: var(--text-muted);">아래 버튼을 눌러 성함·연락처·이메일을 남겨주세요</p>
+            <button id="openGiftBtn" class="btn-primary px-8 py-3 rounded-xl font-bold text-black pulse-neon">후기 선물 받기 신청</button>
+        </div>
+        <div id="giftUnlocked" class="hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://chatgpt.com/g/g-67f0ef8018a0819198047733ed7d5e4c-503-v2-0-sarami-jagseonghan-geulceoreom-sseojuneun-ai-6-30" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-cyan mb-2">edit</span>
+                    <h4 class="font-bold text-neon-cyan">사람이 작성한 글처럼 써주는 AI</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">AI 글쓰기 도구</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-67f0f0ad2d908191ac4fea753f901d27-504-v1-2-jeonmunjeogin-pyojidijain-geomsu-ai" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-magenta mb-2">palette</span>
+                    <h4 class="font-bold text-neon-magenta">전문적인 표지 디자인 검수 AI</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">표지 디자인 검수</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-67dac5a34aec81919290ae762208d6db-cangeob-sanghomyeong-jeonmunga" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-purple mb-2">store</span>
+                    <h4 class="font-bold text-neon-purple">창업 상호명 전문가</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">상호명 추천 AI</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-67e7f3589b3881919e15f6ea44124e32-491-v1-0-weonhaneun-jangreuro-seuredeuhyeong-caeg-hongbogeul-jadong-saengseonggi" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-pink mb-2">campaign</span>
+                    <h4 class="font-bold text-neon-pink">스레드형 책 홍보글 생성기</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">홍보글 자동 생성</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-67f0f2a4998481919ab2fd72686e353f-506-v1-2-neibeo-beulrogeu-cogosog-seo-coejeoghwa-jagseongbos" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-cyan mb-2">language</span>
+                    <h4 class="font-bold text-neon-cyan">네이버 블로그 최적화 글쓰기</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">블로그 SEO 최적화</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-67f0f41545f08191b336a7991df9865c-507-v1-2-geulsseugi-jeomsupyeongga-ceomsag-geulsujeongeul-hankyue" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-magenta mb-2">grading</span>
+                    <h4 class="font-bold text-neon-magenta">글쓰기 점수 평가 챗봇</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">글 품질 평가</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-6937da1c18308191b6e60504b82e7458-v1-0-sora2-bugteureilreo-saengseonggi-15co-jeonyong" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-purple mb-2">videocam</span>
+                    <h4 class="font-bold text-neon-purple">SORA2 북트레일러 생성기</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">영상 생성</p>
+                </a>
+                <a href="https://chatgpt.com/g/g-6937eb1305e481918ecdafaf5b3571e4-v1-0-websoseol-gihoeg-gpt" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-pink mb-2">auto_stories</span>
+                    <h4 class="font-bold text-neon-pink">웹소설 기획서 자동 생성 GPT</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">웹소설 기획</p>
+                </a>
+                <a href="http://gofile.me/6P1dA/01stOxeL4" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-gold mb-2">music_note</span>
+                    <h4 class="font-bold text-gold">저작권 무료 명상음악</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">음악 다운로드</p>
+                </a>
+                <a href="https://duon.myds.me/study_site/" target="_blank" rel="noopener noreferrer" class="glass rounded-2xl p-5 block">
+                    <span class="material-symbols-outlined text-2xl text-neon-cyan mb-2">build</span>
+                    <h4 class="font-bold text-neon-cyan">AI 도구 모음</h4>
+                    <p class="text-xs mt-1" style="color: var(--text-muted);">통합 AI 도구 디렉토리</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ⑦ 수강 신청 CTA ===== -->
+<section id="enroll" class="py-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(0,255,255,0.05), transparent 70%), radial-gradient(ellipse at bottom, rgba(191,0,255,0.05), transparent 70%);"></div>
+    <div class="relative max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">GPT 콘텐츠 메이커 5기, 지금 시작하세요</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">코딩 없이 나만의 웹서비스를 만드는 바이브코딩, 5기에서 배워보세요</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="glass-static rounded-2xl p-6 neon-box">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-2xl text-neon-cyan">videocam</span>
+                    <h3 class="text-xl font-bold text-neon-cyan">온라인 과정</h3>
+                </div>
+                <div class="space-y-3 text-sm" style="color: var(--text-secondary);">
+                    <div class="flex justify-between"><span>방식</span><span class="font-medium">Zoom 실시간 수업</span></div>
+                    <div class="flex justify-between"><span>일정</span><span class="font-medium">화요일 저녁 8시 · 5회</span></div>
+                    <div class="flex justify-between"><span>기간</span><span class="font-medium">2/24 ~ 3/24</span></div>
+                    <div class="flex justify-between"><span>특전</span><span class="font-medium">녹화본 제공</span></div>
+                </div>
+                <div class="mt-6 text-center">
+                    <div class="font-cyber text-4xl font-black text-neon-cyan">33만원</div>
+                </div>
+            </div>
+            <div class="glass-static rounded-2xl p-6 neon-box-purple relative">
+                <div class="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-bold" style="background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink)); color: white;">BEST</div>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-2xl text-neon-purple">groups</span>
+                    <h3 class="text-xl font-bold text-neon-purple">오프라인 과정</h3>
+                </div>
+                <div class="space-y-3 text-sm" style="color: var(--text-secondary);">
+                    <div class="flex justify-between"><span>방식</span><span class="font-medium">현장 대면 수업</span></div>
+                    <div class="flex justify-between"><span>일정</span><span class="font-medium">일요일 오후 1시 · 3회</span></div>
+                    <div class="flex justify-between"><span>기간</span><span class="font-medium">2/22 ~ 3/29</span></div>
+                    <div class="flex justify-between"><span>장소</span><span class="font-medium">평택 고덕중앙로 322</span></div>
+                </div>
+                <div class="mt-6 text-center">
+                    <div class="font-cyber text-4xl font-black text-neon-purple">55만원</div>
+                </div>
+                <div class="glass-accent rounded-xl p-3 mt-4 text-center text-sm">
+                    <span class="text-neon-magenta font-bold">오프라인 신청 시 온라인 과정 무료!</span>
+                </div>
+            </div>
+        </div>
+        <div class="glass-static rounded-2xl p-6 mb-12">
+            <h3 class="text-xl font-bold text-center mb-6 text-neon-cyan">5-STEP 커리큘럼</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                <div class="text-center"><div class="w-10 h-10 rounded-full mx-auto flex items-center justify-center font-cyber font-bold text-sm text-black mb-2" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">01</div><p class="text-xs font-medium" style="color: var(--text-primary);">개발 환경 셋팅</p><p class="text-xs mt-1" style="color: var(--text-muted);">코딩 기초 개념</p></div>
+                <div class="text-center"><div class="w-10 h-10 rounded-full mx-auto flex items-center justify-center font-cyber font-bold text-sm text-black mb-2" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">02</div><p class="text-xs font-medium" style="color: var(--text-primary);">디자인 & 랜딩페이지</p><p class="text-xs mt-1" style="color: var(--text-muted);">웹 화면 구성</p></div>
+                <div class="text-center"><div class="w-10 h-10 rounded-full mx-auto flex items-center justify-center font-cyber font-bold text-sm text-black mb-2" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">03</div><p class="text-xs font-medium" style="color: var(--text-primary);">홈페이지 구조 설계</p><p class="text-xs mt-1" style="color: var(--text-muted);">사용자 동선 설계</p></div>
+                <div class="text-center"><div class="w-10 h-10 rounded-full mx-auto flex items-center justify-center font-cyber font-bold text-sm text-black mb-2" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">04</div><p class="text-xs font-medium" style="color: var(--text-primary);">구글 인증 & 오류</p><p class="text-xs mt-1" style="color: var(--text-muted);">로그인 연동 실습</p></div>
+                <div class="text-center"><div class="w-10 h-10 rounded-full mx-auto flex items-center justify-center font-cyber font-bold text-sm text-black mb-2" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));">05</div><p class="text-xs font-medium" style="color: var(--text-primary);">기능 확장 & 배포</p><p class="text-xs mt-1" style="color: var(--text-muted);">실서버 배포</p></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="glass-static rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 text-neon-cyan">이런 분에게 추천합니다</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-cyan">check</span> AI 활용 강사 및 교육자</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-cyan">check</span> 작가, 콘텐츠 크리에이터</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-cyan">check</span> 1인 사업가 및 브랜드 운영자</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-cyan">check</span> 홈페이지가 필요한 모든 분</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-cyan">check</span> 실전 결과물을 원하는 분</li>
+                </ul>
+            </div>
+            <div class="glass-static rounded-2xl p-6">
+                <h3 class="text-lg font-bold mb-4 text-neon-purple">수료 후 성과</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-purple">star</span> 내가 직접 만든 홈페이지 보유</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-purple">star</span> 실제 배포된 웹페이지 URL 확보</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-purple">star</span> GPT를 개발 파트너로 활용하는 능력</li>
+                    <li class="flex items-center gap-2 text-sm" style="color: var(--text-secondary);"><span class="material-symbols-outlined text-base text-neon-purple">star</span> 원하는 모든 웹앱을 만드는 능력</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="glass-primary inline-block rounded-2xl px-6 py-3 mb-6">
+                <p class="text-sm" style="color: var(--text-secondary);">1~4기 누적 <strong class="text-neon-cyan">125명</strong> 수료 · 평균 만족도 <strong class="text-gold">4.8/5.0</strong></p>
+            </div>
+            <div class="mb-4">
+                <div class="glass-static inline-flex items-center gap-3 px-6 py-3 rounded-2xl mb-6">
+                    <span class="material-symbols-outlined text-gold">timer</span>
+                    <span class="font-cyber text-sm text-gold" id="enrollCountdown">마감까지 계산 중...</span>
+                </div>
+            </div>
+            <a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" rel="noopener noreferrer" class="btn-primary px-12 py-5 rounded-xl text-xl font-bold text-black inline-block pulse-neon" id="enrollCTA">5기 수강 신청하기</a>
+            <p class="mt-4 text-sm" style="color: var(--text-muted);">문의: <a href="http://pf.kakao.com/_UzjZG/chat" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:underline">카카오톡 채널 상담</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ⑧ FAQ ===== -->
+<section id="faq" class="py-20 px-4" style="background: linear-gradient(180deg, transparent, rgba(0,255,255,0.02), transparent);">
+    <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-4 holo-text">궁금한 점이 있으신가요?</h2>
+        <p class="text-center mb-12" style="color: var(--text-muted);">자주 묻는 질문을 모았습니다</p>
+        <div class="space-y-4" id="faqList">
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">후기는 어디에 작성하나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">미래이음연구소 홈페이지(<a href="https://lab.duonedu.net/lectures" target="_blank" class="text-neon-cyan hover:underline">lab.duonedu.net/lectures</a>)에서 작성해주세요.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">선물은 어떻게 받나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">후기 작성 후 위 신청 폼에서 성함·연락처·이메일을 남기시면 AI 도구 10종 링크가 바로 열립니다.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">후기 작성 기한이 있나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">2026년 2월 19일 자정까지입니다.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">후기 내용에 제한이 있나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">자유롭게 작성해주시면 됩니다. 솔직한 공개특강 후기를 부탁드립니다.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">5기 수강 신청은 어떻게 하나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);"><a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" class="text-neon-cyan hover:underline">구글폼</a>에서 신청하실 수 있습니다.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">수강료 할인은 언제까지인가요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">2026년 2월 19일 자정까지 할인 가격으로 신청 가능합니다.</div>
+            </div>
+            <div class="faq-item glass-static rounded-2xl px-6 py-4 cursor-pointer" onclick="this.classList.toggle('open')">
+                <div class="flex items-center justify-between"><h3 class="font-bold text-sm md:text-base" style="color: var(--text-primary);">후기 작성에 얼마나 걸리나요?</h3><span class="material-symbols-outlined text-neon-cyan faq-icon">expand_more</span></div>
+                <div class="faq-answer text-sm" style="color: var(--text-secondary);">약 5~10분이면 충분합니다.</div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" rel="noopener noreferrer" class="btn-primary px-8 py-3 rounded-xl font-bold text-black inline-block">5기 수강 신청하기</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-dark py-12 px-4" style="background: var(--footer-bg);">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="holo-text text-lg font-bold mb-4">GPT 콘텐츠 메이커 5기</div>
+        <p class="text-gray-400 text-sm mb-4">두온교육(주) · 미래이음연구소</p>
+        <div class="flex items-center justify-center gap-4 mb-6">
+            <a href="http://pf.kakao.com/_UzjZG/chat" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">카카오톡 문의</a>
+            <span class="text-gray-600">|</span>
+            <a href="https://lab.duonedu.net/lectures" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">미래이음연구소</a>
+        </div>
+        <p class="text-gray-600 text-xs">&copy; 2026 두온교육. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Floating CTA (Desktop) -->
+<div class="hidden md:block fixed bottom-6 right-6 z-40" id="floatingCTA">
+    <a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-xl font-bold text-black flex items-center gap-2 pulse-neon shadow-2xl">
+        <span class="material-symbols-outlined">edit_note</span> 5기 수강 신청하기
+    </a>
+</div>
+<!-- Floating CTA (Mobile) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-40" id="floatingCTAMobile" style="background: var(--darker-bg); border-top: 1px solid var(--border-color); padding-bottom: env(safe-area-inset-bottom, 0);">
+    <div class="flex gap-2 p-3">
+        <a href="http://pf.kakao.com/_UzjZG/chat" target="_blank" rel="noopener noreferrer" class="btn-secondary flex-1 py-3 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-base">chat</span> 문의하기
+        </a>
+        <a href="https://forms.gle/Lz66hpDb9DTrPduy8" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-3 rounded-xl font-bold text-black text-center text-sm flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-base">edit_note</span> 5기 수강 신청
+        </a>
+    </div>
+</div>
+
+<!-- BGM Player -->
+<div class="fixed bottom-20 md:bottom-20 right-4 z-30">
+    <div id="bgmPlayer" class="glass-static rounded-2xl p-3 w-48 hidden">
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-medium truncate" style="color: var(--text-secondary);" id="bgmTitle">BGM</span>
+            <button onclick="toggleBGMPanel()" class="text-xs" style="color: var(--text-muted);">&times;</button>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="toggleBGM()" id="bgmPlayBtn" class="text-neon-cyan"><span class="material-symbols-outlined text-lg">play_arrow</span></button>
+            <button onclick="nextTrack()" class="text-neon-purple"><span class="material-symbols-outlined text-lg">skip_next</span></button>
+            <input type="range" id="volumeSlider" min="0" max="100" value="30" class="flex-1" oninput="setVolume(this.value)">
+        </div>
+    </div>
+    <button onclick="toggleBGMPanel()" id="bgmToggleBtn" class="glass-static w-10 h-10 rounded-full flex items-center justify-center text-neon-cyan">
+        <span class="material-symbols-outlined">music_note</span>
+    </button>
+</div>
+
+<!-- ===== 공개특강 신청 모달 ===== -->
+<div class="modal-backdrop" id="specialLectureModal">
+    <div class="modal">
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h3 class="text-lg font-bold" style="color: var(--text-primary);">공개특강 다시보기 신청</h3>
+                <p class="text-sm mt-1" style="color: var(--text-muted);">이름과 연락처, 이메일을 남겨주시면 다시보기 영상을 바로 안내해 드립니다</p>
+            </div>
+            <button onclick="closeModal('specialLectureModal')" class="text-xl" style="color: var(--text-muted);" aria-label="닫기">&times;</button>
+        </div>
+        <form id="specialLectureForm">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">이름</label>
+                <input type="text" name="name" required minlength="2" maxlength="20" placeholder="이름을 입력해주세요" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">연락처</label>
+                <input type="tel" name="phone" required pattern="^01[0-9]-?[0-9]{3,4}-?[0-9]{4}$" placeholder="010-0000-0000" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">이메일</label>
+                <input type="email" name="email" required placeholder="email@example.com" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+                <p class="text-xs mt-1" style="color: var(--text-muted);">* 과정 안내 및 이벤트 소식도 함께 보내드립니다</p>
+            </div>
+            <div class="flex items-center justify-between mt-6">
+                <span class="text-xs" style="color: var(--text-muted);" id="slStatus"></span>
+                <div class="flex gap-2">
+                    <button type="button" onclick="closeModal('specialLectureModal')" class="btn-secondary px-4 py-2 rounded-lg text-sm">취소</button>
+                    <button type="submit" class="btn-primary px-6 py-2 rounded-lg text-sm font-bold text-black">신청</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ===== 후기 선물 신청 모달 ===== -->
+<div class="modal-backdrop" id="giftModal">
+    <div class="modal">
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h3 class="text-lg font-bold" style="color: var(--text-primary);">후기 선물 받기 신청</h3>
+                <p class="text-sm mt-1" style="color: var(--text-muted);">AI 도구 10종 선물 링크를 보내드립니다</p>
+            </div>
+            <button onclick="closeModal('giftModal')" class="text-xl" style="color: var(--text-muted);" aria-label="닫기">&times;</button>
+        </div>
+        <form id="giftForm">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">이름</label>
+                <input type="text" name="name" required minlength="2" maxlength="20" placeholder="이름을 입력해주세요" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">연락처</label>
+                <input type="tel" name="phone" required pattern="^01[0-9]-?[0-9]{3,4}-?[0-9]{4}$" placeholder="010-0000-0000" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">이메일</label>
+                <input type="email" name="email" required placeholder="email@example.com" class="w-full px-4 py-2.5 rounded-xl text-sm" style="background: var(--input-bg); border: 1px solid var(--border-color); color: var(--text-primary);">
+            </div>
+            <div class="flex items-center justify-between mt-6">
+                <span class="text-xs" style="color: var(--text-muted);" id="giftStatus"></span>
+                <div class="flex gap-2">
+                    <button type="button" onclick="closeModal('giftModal')" class="btn-secondary px-4 py-2 rounded-lg text-sm">취소</button>
+                    <button type="submit" class="btn-primary px-6 py-2 rounded-lg text-sm font-bold text-black">신청</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+(function() {
+    'use strict';
+
+    var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXgeE0FXdqxdpCMxFNAwp28Rw5T_UqutkACw9Adn7-p0EgWPXyK6n6p9QkUvuzWw0SvA/exec";
+    var YOUTUBE_EMBED_ID = "BflL5wC4T-c";
+    var DEADLINE = new Date('2026-02-19T00:00:00+09:00');
+
+    // === Theme ===
+    var themeIcon = document.getElementById('themeIcon');
+    function setTheme(isLight) {
+        document.documentElement.classList.toggle('light', isLight);
+        themeIcon.textContent = isLight ? 'light_mode' : 'dark_mode';
+        try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch(e) {}
+    }
+    try { if (localStorage.getItem('theme') === 'light') setTheme(true); } catch(e) {}
+    document.getElementById('themeToggle').addEventListener('click', function() {
+        setTheme(!document.documentElement.classList.contains('light'));
+    });
+
+    // === Mobile Menu ===
+    var mobileMenu = document.getElementById('mobileMenu');
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
+    mobileMenu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { mobileMenu.classList.add('hidden'); }); });
+
+    // === Progress Bar ===
+    window.addEventListener('scroll', function() {
+        var s = document.documentElement.scrollTop || document.body.scrollTop;
+        var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressBar').style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+    });
+
+    // === Countdown ===
+    function updateCountdown() {
+        var diff = DEADLINE - new Date();
+        if (diff <= 0) {
+            document.getElementById('countdownText').textContent = '할인 이벤트가 종료되었습니다';
+            document.getElementById('heroCountdown').textContent = '할인 이벤트가 종료되었습니다';
+            var ec = document.getElementById('enrollCountdown'); if (ec) ec.textContent = '할인 이벤트가 종료되었습니다';
+            ['heroCTA','enrollCTA'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) { el.textContent = '모집이 마감되었습니다'; el.classList.remove('pulse-neon'); el.style.opacity = '0.6'; el.style.pointerEvents = 'none'; }
+            });
+            var fc = document.getElementById('floatingCTA'); if (fc) fc.style.display = 'none';
+            var fm = document.getElementById('floatingCTAMobile'); if (fm) fm.style.display = 'none';
+            return;
+        }
+        var d = Math.floor(diff/(864e5)), h = Math.floor((diff%864e5)/36e5), m = Math.floor((diff%36e5)/6e4), s = Math.floor((diff%6e4)/1e3);
+        var t = 'D-'+d+'일 '+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+' 남음';
+        document.getElementById('countdownText').textContent = '5기 수강 신청 마감까지 ' + t;
+        document.getElementById('heroCountdown').textContent = '마감까지 ' + t;
+        var ec = document.getElementById('enrollCountdown'); if (ec) ec.textContent = '마감까지 ' + t;
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    // === Counter Animation ===
+    function easeOut(t) { return 1 - Math.pow(1-t, 3); }
+    function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10), dur = 1500, start = performance.now();
+        function tick(now) {
+            var p = Math.min((now-start)/dur, 1);
+            el.textContent = Math.round(easeOut(p) * target);
+            if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+    var cObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); } });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.counter-animated').forEach(function(el) { cObs.observe(el); });
+
+    // === Scroll Reveal ===
+    var sObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; sObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section > div').forEach(function(el) {
+        el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; sObs.observe(el);
+    });
+
+    // === Confetti ===
+    var cc = document.getElementById('confettiCanvas'), ctx = cc.getContext('2d'), particles = [], active = false;
+    function resizeCC() { cc.width = window.innerWidth; cc.height = window.innerHeight; }
+    resizeCC(); window.addEventListener('resize', resizeCC);
+    function startConfetti() {
+        var n = window.innerWidth < 768 ? 40 : 80, colors = ['#00ffff','#ff00ff','#bf00ff','#ff0080','#ffd700','#f472b6'];
+        particles = [];
+        for (var i = 0; i < n; i++) particles.push({ x: Math.random()*cc.width, y: Math.random()*cc.height-cc.height, w: Math.random()*8+4, h: Math.random()*4+2, c: colors[i%colors.length], sp: Math.random()*3+2, a: Math.random()*6.28, sn: (Math.random()-0.5)*0.1, dr: (Math.random()-0.5) });
+        active = true; drawConfetti(); setTimeout(function() { active = false; }, 3000);
+    }
+    function drawConfetti() {
+        ctx.clearRect(0,0,cc.width,cc.height); var alive = false;
+        particles.forEach(function(p) { if (p.y < cc.height+20) { alive=true; p.y+=p.sp; p.x+=p.dr; p.a+=p.sn; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a); ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); } });
+        if (alive && active) requestAnimationFrame(drawConfetti); else { ctx.clearRect(0,0,cc.width,cc.height); active=false; }
+    }
+    setTimeout(startConfetti, 500);
+
+    // === Modal ===
+    function openModal(id) { var m = document.getElementById(id); if(m) m.style.display='flex'; }
+    window.closeModal = function(id) { var m = document.getElementById(id); if(m) m.style.display='none'; };
+    document.querySelectorAll('.modal-backdrop').forEach(function(b) { b.addEventListener('click', function(e) { if(e.target===b) b.style.display='none'; }); });
+    document.addEventListener('keydown', function(e) { if(e.key==='Escape') document.querySelectorAll('.modal-backdrop').forEach(function(m){ m.style.display='none'; }); });
+    document.getElementById('openSpecialLectureBtn').addEventListener('click', function() { openModal('specialLectureModal'); });
+    document.getElementById('openGiftBtn').addEventListener('click', function() { openModal('giftModal'); });
+
+    // === Google Sheets ===
+    var slSent = false, gSent = false;
+    try { if(localStorage.getItem('sl_submitted')==='true') { slSent=true; unlockVideo(); } if(localStorage.getItem('gift_submitted')==='true') { gSent=true; unlockGifts(); } } catch(e) {}
+
+    document.getElementById('specialLectureForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); if(slSent) return;
+        var form=e.target, st=document.getElementById('slStatus');
+        if(form.website.value) return;
+        st.textContent='전송 중...'; st.style.color='';
+        var btn=form.querySelector('[type="submit"]'); btn.disabled=true;
+        var fd=new FormData(form); fd.append('source','공개특강'); fd.delete('website');
+        try {
+            var r=await fetch(SCRIPT_URL,{method:'POST',body:fd}); if(!r.ok) throw new Error('err');
+            slSent=true; try{localStorage.setItem('sl_submitted','true');}catch(e){}
+            closeModal('specialLectureModal'); unlockVideo();
+            document.getElementById('special-lecture').scrollIntoView({behavior:'smooth'});
+        } catch(err) { st.textContent='전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.'; st.style.color='var(--danger)'; btn.disabled=false; }
+    });
+
+    document.getElementById('giftForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); if(gSent) return;
+        var form=e.target, st=document.getElementById('giftStatus');
+        if(form.website.value) return;
+        st.textContent='전송 중...'; st.style.color='';
+        var btn=form.querySelector('[type="submit"]'); btn.disabled=true;
+        var fd=new FormData(form); fd.append('source','후기선물'); fd.delete('website');
+        try {
+            var r=await fetch(SCRIPT_URL,{method:'POST',body:fd}); if(!r.ok) throw new Error('err');
+            gSent=true; try{localStorage.setItem('gift_submitted','true');}catch(e){}
+            closeModal('giftModal'); unlockGifts();
+            document.getElementById('gifts').scrollIntoView({behavior:'smooth'});
+        } catch(err) { st.textContent='전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.'; st.style.color='var(--danger)'; btn.disabled=false; }
+    });
+
+    function unlockVideo() {
+        var locked=document.getElementById('videoLocked'), unlocked=document.getElementById('videoUnlocked');
+        if(locked) locked.classList.add('hidden');
+        if(unlocked) { unlocked.classList.remove('hidden'); unlocked.innerHTML='<iframe src="https://www.youtube.com/embed/'+YOUTUBE_EMBED_ID+'" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border-radius:16px;"></iframe>'; }
+        var btn=document.getElementById('openSpecialLectureBtn');
+        if(btn) { btn.textContent='신청 완료 — 영상을 재생해주세요'; btn.classList.remove('pulse-neon'); btn.disabled=true; btn.style.opacity='0.7'; }
+    }
+    function unlockGifts() {
+        var locked=document.getElementById('giftLocked'), unlocked=document.getElementById('giftUnlocked');
+        if(locked) locked.classList.add('hidden');
+        if(unlocked) unlocked.classList.remove('hidden');
+    }
+
+    // === BGM ===
+    var tracks=[{t:'바이브코딩은 내사랑',s:'바이브코딩은 내사랑.mp3'},{t:'바이브 코딩 찬양가',s:'바이브 코딩 찬양가.mp3'}], ci=0, audio=new Audio(), playing=false;
+    audio.volume=0.3;
+    window.toggleBGMPanel=function(){ document.getElementById('bgmPlayer').classList.toggle('hidden'); };
+    window.toggleBGM=function(){
+        var btn=document.getElementById('bgmPlayBtn');
+        if(playing){ audio.pause(); playing=false; btn.innerHTML='<span class="material-symbols-outlined text-lg">play_arrow</span>'; }
+        else { audio.src=tracks[ci].s; audio.play().catch(function(){}); playing=true; btn.innerHTML='<span class="material-symbols-outlined text-lg">pause</span>'; document.getElementById('bgmTitle').textContent=tracks[ci].t; }
+    };
+    window.nextTrack=function(){ ci=(ci+1)%tracks.length; document.getElementById('bgmTitle').textContent=tracks[ci].t; if(playing){ audio.src=tracks[ci].s; audio.play().catch(function(){}); } };
+    window.setVolume=function(v){ audio.volume=v/100; };
+    audio.addEventListener('ended',function(){ window.nextTrack(); if(playing) audio.play().catch(function(){}); });
+})();
+</script>
+</body>
+</html>
