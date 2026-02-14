@@ -1158,7 +1158,7 @@
         var btn=form.querySelector('[type="submit"]'); btn.disabled=true;
         var fd=new FormData(form); fd.append('source','공개특강'); fd.delete('website');
         try {
-            var r=await fetch(SCRIPT_URL,{method:'POST',body:fd}); if(!r.ok) throw new Error('err');
+            await fetch(SCRIPT_URL,{method:'POST',body:fd,mode:'no-cors'});
             saveUserInfo(form.querySelector('[name="name"]').value, form.querySelector('[name="phone"]').value, form.querySelector('[name="email"]').value);
             slSent=true; try{localStorage.setItem('sl_submitted','true');}catch(e){}
             closeModal('specialLectureModal'); unlockVideo();
@@ -1174,7 +1174,7 @@
         var btn=form.querySelector('[type="submit"]'); btn.disabled=true;
         var fd=new FormData(form); fd.append('source','후기선물'); fd.delete('website');
         try {
-            var r=await fetch(SCRIPT_URL,{method:'POST',body:fd}); if(!r.ok) throw new Error('err');
+            await fetch(SCRIPT_URL,{method:'POST',body:fd,mode:'no-cors'});
             saveUserInfo(form.querySelector('[name="name"]').value, form.querySelector('[name="phone"]').value, form.querySelector('[name="email"]').value);
             gSent=true; try{localStorage.setItem('gift_submitted','true');}catch(e){}
             closeModal('giftModal'); unlockGifts();
