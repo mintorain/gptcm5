@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mintorain.github.io/gptcm5/sitemap.xml
+Sitemap: https://gptcm5.vercel.app/sitemap.xml
