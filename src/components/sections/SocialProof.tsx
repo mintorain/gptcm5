@@ -39,7 +39,7 @@ function CountUp({ end, suffix, duration = 2000 }: { end: number; suffix: string
 
     return (
         <div ref={ref} className="text-center">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <div className="text-3xl md:text-4xl font-bold text-purple-400">
                 {count !== null ? `${count}${suffix}` : `${end}${suffix}`}
             </div>
         </div>
@@ -48,13 +48,10 @@ function CountUp({ end, suffix, duration = 2000 }: { end: number; suffix: string
 
 export default function SocialProof() {
     return (
-        <section id="social-proof" className="py-24 bg-[#0d0d1a] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
+        <section id="social-proof" className="py-24 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">
-                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Social Proof</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">수강생들의 이야기</h2>
                         <p className="text-gray-400 text-lg">실제 수강생들의 생생한 후기</p>
                     </div>
@@ -76,8 +73,8 @@ export default function SocialProof() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {testimonials.map((t, i) => (
                         <AnimatedItem key={t.name} delay={0.08 * i}>
-                            <div className="card-hover p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
-                                <Quote className="w-8 h-8 text-purple-500/20 mb-4" />
+                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
+                                <Quote className="w-6 h-6 text-purple-500/20 mb-4" />
                                 <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.content}</p>
                                 <div className="flex items-center justify-between pt-4 border-t border-white/[0.04]">
                                     <div>

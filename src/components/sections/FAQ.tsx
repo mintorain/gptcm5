@@ -9,13 +9,10 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-24 bg-[#0A0A0A] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
+        <section className="py-24 bg-[#0A0A0A]">
             <div className="max-w-3xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-14">
-                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">FAQ</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">자주 묻는 질문</h2>
                         <p className="text-gray-400 text-lg">궁금한 점이 있으시면 카카오톡으로 문의해주세요</p>
                     </div>

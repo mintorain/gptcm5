@@ -56,12 +56,9 @@ export default function RegistrationForm() {
     };
 
     return (
-        <section id="apply" className="py-24 bg-[#0d0d1a] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
+        <section id="apply" className="py-24 bg-[#0A0A0A]">
             <div className="max-w-2xl mx-auto px-4">
                 <div className="text-center mb-10">
-                    <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Apply Now</p>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-5">수강 신청 & 후기</h2>
                     <div className="inline-flex items-center gap-2 bg-pink-600/10 border border-pink-500/15 rounded-full px-5 py-2.5">
                         <Gift className="w-4 h-4 text-pink-400" />
@@ -226,7 +223,7 @@ export default function RegistrationForm() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="btn-glow w-full py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/25 disabled:opacity-50 flex items-center justify-center gap-2"
+                            className="w-full py-4 rounded-xl text-lg font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <span className="animate-spin w-5 h-5 border-2 border-white/30 border-t-white rounded-full" />

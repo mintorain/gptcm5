@@ -9,13 +9,10 @@ export default function Curriculum() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="curriculum" className="py-24 bg-[#0d0d1a] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
+        <section id="curriculum" className="py-24 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">
-                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Curriculum</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">커리큘럼</h2>
                         <p className="text-gray-400 text-lg">5회차 구성으로 기획부터 배포까지 완성합니다</p>
                     </div>
@@ -34,7 +31,7 @@ export default function Curriculum() {
                                     className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-sm shrink-0">
+                                        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-sm shrink-0">
                                             {item.session}
                                         </span>
                                         <span className="text-white font-semibold">{item.title}</span>
@@ -73,7 +70,7 @@ export default function Curriculum() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     <AnimatedItem delay={0}>
-                        <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 card-hover h-full">
+                        <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 h-full">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center">
                                     <Monitor className="w-6 h-6 text-purple-400" />
@@ -96,9 +93,9 @@ export default function Curriculum() {
                     </AnimatedItem>
 
                     <AnimatedItem delay={0.15}>
-                        <div className="relative rounded-2xl border-2 border-purple-500/40 bg-purple-500/[0.03] p-8 card-hover h-full">
+                        <div className="relative rounded-2xl border-2 border-purple-500/40 bg-purple-500/[0.03] p-8 h-full">
                             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1 shadow-lg shadow-purple-500/20">
+                                <span className="bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1">
                                     <Gift className="w-3 h-3" /> 추천
                                 </span>
                             </div>

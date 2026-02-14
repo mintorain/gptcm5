@@ -29,13 +29,10 @@ const videos = [
 
 export default function VideoPreview() {
     return (
-        <section id="video" className="py-24 bg-[#0A0A0A] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-
+        <section id="video" className="py-24 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-14">
-                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Video Preview</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                             5기 바이브코딩, 이런 내용을 배웁니다
                         </h2>
@@ -44,7 +41,7 @@ export default function VideoPreview() {
                 </AnimatedSection>
 
                 <AnimatedSection delay={0.1}>
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 bg-[#1A1A2E] border border-white/10 shadow-2xl shadow-purple-500/5">
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 bg-[#1A1A2E] border border-white/10">
                         <iframe
                             className="absolute inset-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -58,7 +55,7 @@ export default function VideoPreview() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                     {videos.map((video, i) => (
                         <AnimatedItem key={video.id} delay={0.1 * i}>
-                            <div className="card-hover group relative rounded-xl overflow-hidden bg-[#111122] border border-white/[0.06] cursor-pointer">
+                            <div className="group relative rounded-xl overflow-hidden bg-white/[0.02] border border-white/[0.06] cursor-pointer">
                                 <div className="relative aspect-video overflow-hidden">
                                     <img
                                         src={video.thumbnail}
@@ -66,7 +63,7 @@ export default function VideoPreview() {
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className="w-14 h-14 rounded-full bg-purple-600/90 backdrop-blur flex items-center justify-center shadow-lg shadow-purple-500/30">
+                                        <div className="w-14 h-14 rounded-full bg-purple-600/90 flex items-center justify-center">
                                             <Play className="w-6 h-6 text-white ml-0.5" />
                                         </div>
                                     </div>
@@ -87,9 +84,9 @@ export default function VideoPreview() {
                     <div className="text-center">
                         <a
                             href="#apply"
-                            className="btn-glow inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/25"
+                            className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white rounded-full bg-purple-600 hover:bg-purple-700 transition-colors"
                         >
-                            전체 강의 듣고 싶다면? 수강 신청하기
+                            수강 신청하기
                         </a>
                     </div>
                 </AnimatedSection>

@@ -5,14 +5,10 @@ import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section"
 
 export default function Transformation() {
     return (
-        <section className="py-24 bg-[#0A0A0A] relative">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-            <div className="absolute bottom-1/3 left-0 w-[300px] h-[300px] rounded-full bg-pink-600 opacity-[0.03] blur-[100px] pointer-events-none" />
-
+        <section className="py-24 bg-[#0A0A0A]">
             <div className="max-w-6xl mx-auto px-4">
                 <AnimatedSection>
                     <div className="text-center mb-16">
-                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Transformation</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                             이 과정을 마치면 당신은 이렇게 달라집니다
                         </h2>
@@ -29,7 +25,7 @@ export default function Transformation() {
                         { icon: Wrench, title: "원하는 모든 웹앱을 만드는 능력", desc: "홈페이지뿐 아니라 예약 시스템, 회원 관리, 자동화 도구까지. 상상하는 모든 것을 직접 만들 수 있습니다." },
                     ].map(({ icon: Icon, title, desc }, i) => (
                         <AnimatedItem key={title} delay={0.08 * i}>
-                            <div className="card-hover p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
+                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
                                 <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center mb-5">
                                     <Icon className="w-6 h-6 text-purple-400" />
                                 </div>
