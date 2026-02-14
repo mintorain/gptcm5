@@ -64,21 +64,25 @@
 
         /* === Light Mode === */
         html.light {
-            --dark-bg: #f8fafc;
-            --darker-bg: #f1f5f9;
+            --dark-bg: #eef2f7;
+            --darker-bg: #e4eaf3;
             --text-primary: #0f172a;
             --text-secondary: #334155;
             --text-muted: #64748b;
             --border-color: rgba(14, 165, 233, 0.25);
-            --header-bg: rgba(248, 250, 252, 0.95);
+            --header-bg: rgba(238, 242, 247, 0.95);
             --footer-bg: #0f172a;
-            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-bg: rgba(255, 255, 255, 0.75);
             --input-bg: rgba(15, 23, 42, 0.05);
             --neon-cyan: #0891b2;
             --neon-magenta: #c026d3;
             --neon-purple: #7c3aed;
             --neon-pink: #db2777;
             --gold: #b8860b;
+        }
+        html.light body {
+            background: linear-gradient(160deg, #e0f2fe 0%, #ede9fe 40%, #fce7f3 70%, #e0f2fe 100%) !important;
+            background-attachment: fixed !important;
         }
 
         html { scroll-behavior: smooth; font-size: 21px; }
@@ -260,7 +264,7 @@
 <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg" style="background: var(--header-bg); border-bottom: 1px solid var(--border-color);">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2">
-            <img src="mirae_logo1.png" alt="미래이음연구소" class="h-8 w-auto" style="background:linear-gradient(135deg,#e0f7fa,#e8daef);padding:2px 6px;border-radius:6px;" onerror="this.style.display='none'">
+            <img src="mirae_logo1.png" alt="미래이음연구소" class="h-8 w-auto" style="background:#fff;padding:2px 6px;border-radius:6px;" onerror="this.style.display='none'">
             <span class="font-cyber text-sm tracking-wider text-neon-cyan hidden sm:inline">GPT 콘텐츠 메이커 5기</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm" style="color: var(--text-muted);">
