@@ -32,7 +32,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
-                    className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto"
+                    className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto text-center"
                 >
                     GPT콘텐츠메이커 5기 (바이브코딩편) — 기획부터 배포까지 완성형 실습
                 </motion.p>
