@@ -70,8 +70,8 @@ export default function Curriculum() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     <AnimatedItem delay={0}>
-                        <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 h-full">
-                            <div className="flex items-center gap-3 mb-6">
+                        <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 h-full text-center">
+                            <div className="flex flex-col items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center">
                                     <Monitor className="w-6 h-6 text-purple-400" />
                                 </div>
@@ -82,7 +82,7 @@ export default function Curriculum() {
                             </div>
                             <ul className="space-y-3 mb-8">
                                 {onlineCourse.features.map((f) => (
-                                    <li key={f} className="flex items-center gap-2.5 text-gray-300">
+                                    <li key={f} className="flex items-center justify-center gap-2.5 text-gray-300">
                                         <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                                         <span className="text-sm">{f}</span>
                                     </li>
@@ -93,13 +93,13 @@ export default function Curriculum() {
                     </AnimatedItem>
 
                     <AnimatedItem delay={0.15}>
-                        <div className="relative rounded-2xl border-2 border-purple-500/40 bg-purple-500/[0.03] p-8 h-full">
+                        <div className="relative rounded-2xl border-2 border-purple-500/40 bg-purple-500/[0.03] p-8 h-full text-center">
                             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                                 <span className="bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1">
                                     <Gift className="w-3 h-3" /> 추천
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex flex-col items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center">
                                     <MapPin className="w-6 h-6 text-purple-400" />
                                 </div>
@@ -110,14 +110,14 @@ export default function Curriculum() {
                             </div>
                             <ul className="space-y-3 mb-8">
                                 {offlineCourse.features.map((f) => (
-                                    <li key={f} className="flex items-center gap-2.5 text-gray-300">
+                                    <li key={f} className="flex items-center justify-center gap-2.5 text-gray-300">
                                         <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                                         <span className="text-sm">{f}</span>
                                     </li>
                                 ))}
                             </ul>
                             <div className="text-3xl font-bold text-white mb-2">{offlineCourse.price}</div>
-                            <p className="text-sm text-pink-400 font-semibold flex items-center gap-1">
+                            <p className="text-sm text-pink-400 font-semibold flex items-center justify-center gap-1">
                                 <Gift className="w-4 h-4" /> {offlineCourse.bonus}
                             </p>
                         </div>

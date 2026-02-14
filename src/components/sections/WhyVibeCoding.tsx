@@ -24,8 +24,8 @@ export default function WhyVibeCoding() {
                         { icon: BookOpen, title: "새로운 리터러시", desc: "GPT와 대화하며 원하는 것을 만들어내는 능력" },
                     ].map(({ icon: Icon, title, desc }, i) => (
                         <AnimatedItem key={title} delay={0.08 * i}>
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
-                                <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center mb-5">
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full text-center">
+                                <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center mb-5 mx-auto">
                                     <Icon className="w-6 h-6 text-purple-400" />
                                 </div>
                                 <h3 className="text-white font-bold text-lg mb-2">{title}</h3>

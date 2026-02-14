@@ -25,8 +25,8 @@ export default function Transformation() {
                         { icon: Wrench, title: "원하는 모든 웹앱을 만드는 능력", desc: "홈페이지뿐 아니라 예약 시스템, 회원 관리, 자동화 도구까지. 상상하는 모든 것을 직접 만들 수 있습니다." },
                     ].map(({ icon: Icon, title, desc }, i) => (
                         <AnimatedItem key={title} delay={0.08 * i}>
-                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
-                                <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center mb-5">
+                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full text-center">
+                                <div className="w-12 h-12 rounded-xl bg-purple-600/15 flex items-center justify-center mb-5 mx-auto">
                                     <Icon className="w-6 h-6 text-purple-400" />
                                 </div>
                                 <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
@@ -57,7 +57,7 @@ export default function Transformation() {
                                 { icon: Gift, text: "무료특강 후기 작성 시 선물 증정", color: "text-pink-400" },
                                 { icon: Gift, text: "오프라인 신청 시 온라인 과정 무료!", color: "text-pink-400" },
                             ].map(({ icon: Icon, text, color }) => (
-                                <div key={text} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                                <div key={text} className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                                     <Icon className={`w-5 h-5 ${color} shrink-0`} />
                                     <span className="text-gray-300 text-sm">{text}</span>
                                 </div>

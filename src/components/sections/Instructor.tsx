@@ -14,7 +14,7 @@ export default function Instructor() {
                 </AnimatedSection>
 
                 <AnimatedSection delay={0.15}>
-                    <div className="flex flex-col md:flex-row items-center gap-10 p-8 md:p-10 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+                    <div className="flex flex-col items-center gap-10 p-8 md:p-10 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-center">
                         {/* 프로필 */}
                         <div className="shrink-0">
                             <div className="w-44 h-44 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center">
@@ -26,7 +26,7 @@ export default function Instructor() {
                         </div>
 
                         {/* 소개 */}
-                        <div className="text-center md:text-left">
+                        <div className="text-center">
                             <div className="inline-flex items-center gap-2 bg-purple-600/10 border border-purple-500/15 rounded-full px-4 py-1.5 mb-3">
                                 <span className="text-xs font-semibold text-purple-300">생성형 AI 활용 교육 전문가</span>
                             </div>

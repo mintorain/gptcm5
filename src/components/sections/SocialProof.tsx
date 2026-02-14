@@ -73,10 +73,10 @@ export default function SocialProof() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {testimonials.map((t, i) => (
                         <AnimatedItem key={t.name} delay={0.08 * i}>
-                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full">
-                                <Quote className="w-6 h-6 text-purple-500/20 mb-4" />
+                            <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] h-full text-center">
+                                <Quote className="w-6 h-6 text-purple-500/20 mb-4 mx-auto" />
                                 <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.content}</p>
-                                <div className="flex items-center justify-between pt-4 border-t border-white/[0.04]">
+                                <div className="flex items-center justify-center gap-4 pt-4 border-t border-white/[0.04]">
                                     <div>
                                         <p className="text-white font-semibold text-sm">{t.name}</p>
                                         <p className="text-gray-500 text-xs">{t.role}</p>
