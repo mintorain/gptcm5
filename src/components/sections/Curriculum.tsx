@@ -30,7 +30,7 @@ export default function Curriculum() {
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                     className="w-full flex items-center justify-between p-5 hover:bg-white/[0.02] transition-colors"
                                 >
-                                    <div className="flex items-center gap-4 text-left">
+                                    <div className="flex items-center gap-4">
                                         <span className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-sm shrink-0">
                                             {item.session}
                                         </span>

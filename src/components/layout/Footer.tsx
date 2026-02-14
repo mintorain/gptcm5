@@ -17,7 +17,7 @@ export default function Footer() {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {/* 회사 정보 */}
                     <div>
                         <h4 className="text-white font-bold mb-4">두온교육(주) × 미래이음연구소</h4>
@@ -32,13 +32,13 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-4">연락처</h4>
                         <div className="space-y-3">
-                            <a href="tel:010-3343-4000" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                            <a href="tel:010-3343-4000" className="flex items-center justify-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
                                 <Phone className="w-4 h-4" /> 010-3343-4000
                             </a>
-                            <a href="mailto:mintorain@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                            <a href="mailto:mintorain@gmail.com" className="flex items-center justify-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
                                 <Mail className="w-4 h-4" /> mintorain@gmail.com
                             </a>
-                            <a href="http://pf.kakao.com/_UzjZG/chat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                            <a href="http://pf.kakao.com/_UzjZG/chat" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
                                 <MessageCircle className="w-4 h-4" /> 카카오톡 문의
                             </a>
                         </div>

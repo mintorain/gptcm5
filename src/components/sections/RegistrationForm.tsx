@@ -139,7 +139,7 @@ export default function RegistrationForm() {
                         {/* 이름/이메일/연락처 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">이름 *</label>
+                                <label className="block text-sm font-medium text-gray-300 mb-2 text-center">이름 *</label>
                                 <input
                                     type="text"
                                     required
@@ -150,7 +150,7 @@ export default function RegistrationForm() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">이메일 *</label>
+                                <label className="block text-sm font-medium text-gray-300 mb-2 text-center">이메일 *</label>
                                 <input
                                     type="email"
                                     required
@@ -162,7 +162,7 @@ export default function RegistrationForm() {
                             </div>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-300 mb-2">연락처 (선택)</label>
+                            <label className="block text-sm font-medium text-gray-300 mb-2 text-center">연락처 (선택)</label>
                             <input
                                 type="tel"
                                 value={formData.phone}
@@ -176,8 +176,8 @@ export default function RegistrationForm() {
                         {showReview && (
                             <>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">별점</label>
-                                    <div className="flex gap-1">
+                                    <label className="block text-sm font-medium text-gray-300 mb-2 text-center">별점</label>
+                                    <div className="flex justify-center gap-1">
                                         {[1, 2, 3, 4, 5].map((s) => (
                                             <button
                                                 type="button"
@@ -193,7 +193,7 @@ export default function RegistrationForm() {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                    <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
                                         후기 내용 * <span className="text-gray-500 font-normal">({formData.review.length}/50자 이상)</span>
                                     </label>
                                     <textarea
@@ -209,7 +209,7 @@ export default function RegistrationForm() {
                         )}
 
                         {/* 카카오톡 */}
-                        <label className="flex items-center gap-3 cursor-pointer">
+                        <label className="flex items-center justify-center gap-3 cursor-pointer">
                             <input
                                 type="checkbox"
                                 checked={formData.kakao}
