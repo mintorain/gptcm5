@@ -56,11 +56,14 @@ export default function RegistrationForm() {
     };
 
     return (
-        <section id="apply" className="py-20 bg-[#1A1A2E]">
+        <section id="apply" className="py-24 bg-[#0d0d1a] relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+
             <div className="max-w-2xl mx-auto px-4">
                 <div className="text-center mb-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">수강 신청 & 후기</h2>
-                    <div className="inline-flex items-center gap-2 bg-pink-600/10 border border-pink-500/20 rounded-full px-4 py-2">
+                    <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Apply Now</p>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-5">수강 신청 & 후기</h2>
+                    <div className="inline-flex items-center gap-2 bg-pink-600/10 border border-pink-500/15 rounded-full px-5 py-2.5">
                         <Gift className="w-4 h-4 text-pink-400" />
                         <span className="text-sm text-pink-300">후기를 작성하시면 GPT 프롬프트 모음집을 이메일로 보내드립니다!</span>
                     </div>
@@ -80,7 +83,7 @@ export default function RegistrationForm() {
                         </a>
                     </div>
                 ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5 p-8 rounded-2xl bg-white/5 border border-white/10">
+                    <form onSubmit={handleSubmit} className="space-y-5 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
                         {/* 폼 유형 */}
                         <div>
                             <label className="block text-sm font-medium text-gray-300 mb-3">유형 선택</label>
@@ -223,7 +226,7 @@ export default function RegistrationForm() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 disabled:opacity-50 flex items-center justify-center gap-2"
+                            className="btn-glow w-full py-4 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/25 disabled:opacity-50 flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <span className="animate-spin w-5 h-5 border-2 border-white/30 border-t-white rounded-full" />

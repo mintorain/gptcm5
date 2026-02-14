@@ -1,6 +1,7 @@
 "use client";
 
 import { Play } from "lucide-react";
+import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
 
 const videos = [
     {
@@ -28,66 +29,70 @@ const videos = [
 
 export default function VideoPreview() {
     return (
-        <section id="video" className="py-20 bg-[#0A0A0A]">
+        <section id="video" className="py-24 bg-[#0A0A0A] relative">
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+
             <div className="max-w-6xl mx-auto px-4">
-                {/* 섹션 타이틀 */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        5기 바이브코딩, 이런 내용을 배웁니다
-                    </h2>
-                    <p className="text-gray-400 text-lg">녹화 영상으로 강의 퀄리티를 직접 확인하세요</p>
-                </div>
+                <AnimatedSection>
+                    <div className="text-center mb-14">
+                        <p className="text-purple-400 font-semibold text-sm tracking-widest uppercase mb-3">Video Preview</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                            5기 바이브코딩, 이런 내용을 배웁니다
+                        </h2>
+                        <p className="text-gray-400 text-lg">녹화 영상으로 강의 퀄리티를 직접 확인하세요</p>
+                    </div>
+                </AnimatedSection>
 
-                {/* 메인 영상 */}
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 bg-[#1A1A2E] border border-white/10">
-                    <iframe
-                        className="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="GPT콘텐츠메이커 5기 미리보기"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    />
-                </div>
+                <AnimatedSection delay={0.1}>
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 bg-[#1A1A2E] border border-white/10 shadow-2xl shadow-purple-500/5">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="GPT콘텐츠메이커 5기 미리보기"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    </div>
+                </AnimatedSection>
 
-                {/* 영상 카드 목록 */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                    {videos.map((video) => (
-                        <div
-                            key={video.id}
-                            className="group relative rounded-xl overflow-hidden bg-[#1A1A2E] border border-white/10 hover:border-purple-500/50 transition-all cursor-pointer"
-                        >
-                            <div className="relative aspect-video overflow-hidden">
-                                <img
-                                    src={video.thumbnail}
-                                    alt={video.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <div className="w-14 h-14 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center">
-                                        <Play className="w-6 h-6 text-white ml-1" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    {videos.map((video, i) => (
+                        <AnimatedItem key={video.id} delay={0.1 * i}>
+                            <div className="card-hover group relative rounded-xl overflow-hidden bg-[#111122] border border-white/[0.06] cursor-pointer">
+                                <div className="relative aspect-video overflow-hidden">
+                                    <img
+                                        src={video.thumbnail}
+                                        alt={video.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="w-14 h-14 rounded-full bg-purple-600/90 backdrop-blur flex items-center justify-center shadow-lg shadow-purple-500/30">
+                                            <Play className="w-6 h-6 text-white ml-0.5" />
+                                        </div>
                                     </div>
+                                    <span className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-mono">
+                                        {video.duration}
+                                    </span>
                                 </div>
-                                <span className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                                    {video.duration}
-                                </span>
+                                <div className="p-5">
+                                    <h3 className="text-white font-semibold text-sm mb-1">{video.title}</h3>
+                                    <p className="text-gray-500 text-xs">{video.description}</p>
+                                </div>
                             </div>
-                            <div className="p-4">
-                                <h3 className="text-white font-semibold text-sm mb-1">{video.title}</h3>
-                                <p className="text-gray-400 text-xs">{video.description}</p>
-                            </div>
-                        </div>
+                        </AnimatedItem>
                     ))}
                 </div>
 
-                {/* CTA */}
-                <div className="text-center">
-                    <a
-                        href="#apply"
-                        className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40"
-                    >
-                        전체 강의 듣고 싶다면? 수강 신청하기
-                    </a>
-                </div>
+                <AnimatedSection>
+                    <div className="text-center">
+                        <a
+                            href="#apply"
+                            className="btn-glow inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/25"
+                        >
+                            전체 강의 듣고 싶다면? 수강 신청하기
+                        </a>
+                    </div>
+                </AnimatedSection>
             </div>
         </section>
     );
