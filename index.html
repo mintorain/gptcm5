@@ -1264,6 +1264,9 @@
     var pauseIcon='<span class="material-symbols-outlined text-lg">pause</span>';
     audio.src=tracks[ci].s; document.getElementById('bgmTitle').textContent=tracks[ci].t;
     audio.play().then(function(){ playing=true; document.getElementById('bgmPlayBtn').innerHTML=pauseIcon; }).catch(function(){ document.addEventListener('click',function autoPlay(){ if(!playing){ audio.play().then(function(){ playing=true; document.getElementById('bgmPlayBtn').innerHTML=pauseIcon; }).catch(function(){}); } document.removeEventListener('click',autoPlay); },{once:true}); });
+    // YouTube iframe 클릭 시 BGM 정지 (window blur 감지)
+    var playIcon='<span class="material-symbols-outlined text-lg">play_arrow</span>';
+    window.addEventListener('blur',function(){ setTimeout(function(){ var el=document.activeElement; if(el && el.tagName==='IFRAME' && el.closest('#videoUnlocked') && playing){ audio.pause(); playing=false; document.getElementById('bgmPlayBtn').innerHTML=playIcon; } },0); });
 })();
 </script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
